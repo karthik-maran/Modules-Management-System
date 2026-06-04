@@ -1,0 +1,8 @@
+.module-head-container{
+    padding:200%,
+}
+
+.add-module-btn{
+    display: flex;
+    justify-content: space-between;
+}

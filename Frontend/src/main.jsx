@@ -1,0 +1,17 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+import '@carbon/styles/css/styles.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Theme } from '@carbon/react';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
+    <Theme theme='g10'>
+    <App />
+    </Theme>
+    </BrowserRouter>
+  </StrictMode>,
+)

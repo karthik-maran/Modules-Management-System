@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+
+}
+#root {
+  background: #6c4747;
+  min-height: 100vh;
+}
