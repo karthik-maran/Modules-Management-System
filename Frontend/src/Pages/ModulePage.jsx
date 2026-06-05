@@ -13,7 +13,7 @@ function ModulePage(){
         </Layer>
         </div>
         <div style={{marginLeft:"20px", display:"flex",padding:"auto"}}>
-            <p>line Module:1 | Draft Module:2</p>
+           
         </div>
     
 
