@@ -1,0 +1,45 @@
+.right-side-model .cds--modal-container {
+  position: fixed;
+  top: 10;
+  overflow-y: visible;
+  right: 0;
+  margin: 0;
+  width: 420px;
+  max-width: 420px;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+  animation: slideInRight 0.25s ease-in-out;
+}
+
+.right-side-model .cds--modal-content {
+  overflow-y: auto;
+ 
+}
+.right-side-model .cds--modal-footer {
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+.right-side-model .cds--modal-footer .cds--btn {
+  width:100%;
+
+  height: 9px;
+}
+
+.summary-heading{
+    margin-top: 20px;
+    padding: 10px;
+    
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

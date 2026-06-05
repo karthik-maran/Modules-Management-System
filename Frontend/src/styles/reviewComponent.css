@@ -1,0 +1,67 @@
+
+.submit-btn{
+    background-color: white;
+    width: 150px;
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+
+    
+}
+:hover.submit-btn{
+    background-color: black;
+    
+}
+.change-btn{
+    background-color: white;
+    width: 150px;
+    white-space: nowrap;
+    text-align:center;
+    color: black;
+    border: 1px solid black;
+}
+:hover.change-btn{
+    background-color: black;
+}
+
+.approve-btn{
+    background-color: white;
+    
+    width: 150px;
+    text-align:center;
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+}
+:hover.approve-btn{
+    background-color: black;
+}
+:focus.submit-btn{
+    background-color: black;
+    color: white;
+    outline: black;
+}
+:focus.change-btn{
+    background-color: black;
+    color: white;
+}
+:focus.approve-btn{
+    background-color: black;
+    color: white;
+}
+.summary-container{
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+.summary-container p{
+    color: #0055ff;
+    font-size: x-large;
+}
+.summary-container h6{
+    color: gray;
+    font-weight: lighter;
+}
+.summary-container h1{
+    font-size: x-large;
+}

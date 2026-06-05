@@ -9,9 +9,7 @@ import { Theme } from '@carbon/react';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <Theme theme='g10'>
-    <App />
-    </Theme>
+    <App /> 
     </BrowserRouter>
   </StrictMode>,
 )

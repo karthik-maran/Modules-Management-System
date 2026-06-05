@@ -6,3 +6,21 @@
     display: flex;
     justify-content: space-between;
 }
+.mod-btn{
+    background-color: white;
+    color: black;
+    border:1px solid black;
+}
+.mymod-btn{
+    background-color: white;
+    color: black;
+    border:1px solid black
+}
+.mod-btn:hover,.mymod-btn:hover{
+    background-color: black;
+    color: white;
+}
+.mod-btn:focus,.mymod-btn:focus{
+    background-color: black;
+    color:white
+}

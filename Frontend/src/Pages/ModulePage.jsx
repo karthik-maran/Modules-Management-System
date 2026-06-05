@@ -6,14 +6,18 @@ import "../styles/module.css"
 function ModulePage(){
     return(
        <>
-       <div style={{padding:"10px"}}>
+       <div style={{padding:"20px",backgroundColor:"white"}}>
         <Layer>
-                <ModuleComponent/>
-               
+             <ModuleComponent/>
+
         </Layer>
         </div>
-     
-        <div>
+        <div style={{marginLeft:"20px", display:"flex",padding:"auto"}}>
+            <p>line Module:1 | Draft Module:2</p>
+        </div>
+    
+
+        <div style={{backgroundColor:"white" ,marginLeft:"20px",marginRight:"20px"}}>
             <Layer>
                 <ListModudle/>
             </Layer>

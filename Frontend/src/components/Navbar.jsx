@@ -10,6 +10,7 @@ import {
 
 import '@carbon/styles/css/styles.css';
 import '../styles/navbar.css';
+
 function Navbar(){
 return(
     <Theme theme="g100">
@@ -19,7 +20,7 @@ return(
         <HeaderName prefix="">Self Talk Psychologist </HeaderName>
         <Search className="custom-search"/>
         <HeaderNavigation >
-            <HeaderMenuItem>catlog</HeaderMenuItem>
+            <HeaderMenuItem>catalog</HeaderMenuItem>
          
         </HeaderNavigation>
            <HeaderMenu menuLinkName="select Campas">
