@@ -42,6 +42,7 @@ function ListModudle(){
     const[expandedRows,setExpandedRows] = useState({});
     const[selectedModule,setSelectedModule] = useState(null)
     const [showPanel, setShowPanel] = useState(false);
+    const [filters, setFilters] = useState({authors: [],categories: [],tags: []});
     const toggleRow = (moduleId) => {
     setExpandedRows((prev) => ({
     ...prev,
@@ -102,7 +103,7 @@ function ListModudle(){
         
               {showFilter && (
                 <div className="w-70 min-h-screen border-r bg-white">
-                <FilterPanel setShowFilter={setShowFilter}/>
+                <FilterPanel setShowFilter={setShowFilter} data={data}  filters={filters} setFilters={setFilters}/>
                 </div>
              )}
     <div className="flex-1">

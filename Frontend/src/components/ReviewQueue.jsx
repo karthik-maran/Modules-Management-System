@@ -13,11 +13,18 @@ function ReviewQueueComponent(){
                     <p>Review Summary</p>
                     <h6>4 modules under review</h6>
                     </div>
-                
-                <div className="flex">
-                   <div className="flex"> <Warning/> <h1>1</h1></div>
-                   <div className="flex"> <CheckmarkFilled/><h1>2</h1></div>
+                <div className="flex gap-6">
+                    <div className="flex items-center gap-2">
+                        <Warning />
+                        <h1>1</h1>
+                    </div>
+
+                <div className="flex items-center gap-2">
+                     <CheckmarkFilled />
+                        <h1>2</h1>
+                    </div>
                 </div>
+
                 </div>
             </div>
             <div className="flex h-10  ">

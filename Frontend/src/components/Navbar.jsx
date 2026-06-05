@@ -13,6 +13,7 @@ import '../styles/navbar.css';
 
 function Navbar(){
 return(
+    <div className="nav-container">
     <Theme theme="g100">
     <Header className="custom-header" >
         
@@ -50,6 +51,7 @@ return(
       </HeaderGlobalBar>
     </Header>
     </Theme>
+    </div>
 )
 }
 export default Navbar;

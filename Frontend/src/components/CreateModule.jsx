@@ -38,7 +38,7 @@ function CreateModule({ open, onClose }){
         try {
             const response = await axios.post(`${API_URL}/api/module`,moduleData)
             console.log(response.data);
-            alert("data saved successfully")
+            alert("Module Created successfully")
         } catch (error) {
             alert('failed to save')
          console.error(error);   

@@ -107,8 +107,10 @@ async function handleSave(moduleId){
        
       
     <div className="flex justify-center items-center ">
-  
+   
     <div style={{padding:"40px"}} className="flex flex-col w-full gap-10  shadow-md ">
+         <h1>Update Module</h1>
+         <p>Update a existing module with its details, content, and organization settings.</p>
       <TextInput
         id="module-name"
         labelText="Module Name"
