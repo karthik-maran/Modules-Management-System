@@ -80,3 +80,42 @@ exports.modifyById = async (req, res) => {
         res.status(500).json({ message: "Something went wrong"});
     }
 };
+
+
+//Optional business logic 
+
+exports.changeReview = async(req,res) => {
+    try {
+        const reviewStatusChange = await moduleModel.findOneAndUpdate(
+            {moduleId:req.params.moduleId},
+            {$set:req.body},
+            {
+             returnDocument: 'after',
+             runValidators: true
+            });
+            if(!reviewStatusChange){
+                res.status(404).json({message:"object not found"});
+            }
+            res.status(200).json({message:"review status update successfully"});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({message:"something went wrong!!"})
+        
+    }
+}
+
+exports.getByReviewStatus = async(req,res)=>{
+   try {
+        const review = req.query.statusValue;
+        const getReviewStatus = await moduleModel.find({
+            reviewStatus:review
+        })
+        if(!getReviewStatus){
+            res.status(404).json({message:"status not found"});
+        }
+        res.status(200).json({message:"status fetched successfully",getReviewStatus})
+   } catch (error) {
+    console.error(error);
+    res.status(500).json({message:"something went wrong!!"})
+   }
+}

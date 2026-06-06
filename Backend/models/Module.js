@@ -39,6 +39,11 @@ const moduleSchema = mongoose.Schema({
         type:String,
         requried:true
     },
+    reviewStatus:{
+        type:String,
+        require:true,
+        default:"Pending"
+    },
     tags:{
         type:[String],
         

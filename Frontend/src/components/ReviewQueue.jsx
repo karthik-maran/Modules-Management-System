@@ -1,9 +1,10 @@
 import { Button } from "@carbon/react";
-import { Warning,CheckmarkFilled } from "@carbon/icons-react";
+import { WarningFilled,CheckmarkFilled } from "@carbon/icons-react";
 import "@carbon/styles/css/styles.css"
 import "../styles/reviewComponent.css"
 
-function ReviewQueueComponent(){
+
+function ReviewQueueComponent({setReviewStatus}){
     return(
         <> <div className="flex flex-col gap-5">
             <div className="flex justify-between">
@@ -15,12 +16,12 @@ function ReviewQueueComponent(){
                     </div>
                 <div className="flex gap-6">
                     <div className="flex items-center gap-2">
-                        <Warning />
+                        <WarningFilled  className="text-yellow-500"/>
                         <h1>1</h1>
                     </div>
 
                 <div className="flex items-center gap-2">
-                     <CheckmarkFilled />
+                     <CheckmarkFilled className="text-green-500" />
                         <h1>2</h1>
                     </div>
                 </div>
@@ -31,16 +32,19 @@ function ReviewQueueComponent(){
                 <Button 
                 className="submit-btn"
                 title="Submitted"
+                onClick={()=>setReviewStatus("Pending")}
                 >
-                Submitted
+                Pending
                 </Button>
                 <Button 
                 title="Needs Changes"
-                className="change-btn">
+                className="change-btn"
+                onClick={()=>setReviewStatus("Needs Changes")}>
                 Needs Change
                 </Button>
                 <Button title="Approved"
-                className="approve-btn">
+                className="approve-btn"
+                onClick={()=>setReviewStatus("Approved")}>
                 Approved
                 </Button>
             </div>

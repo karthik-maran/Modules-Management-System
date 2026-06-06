@@ -1,6 +1,7 @@
 import ModuleComponent from "../components/ModuleComponent";
 import { Theme,Layer } from "@carbon/react";
 import ListModudle from "../components/ListModule";
+
 import '@carbon/styles/css/styles.css';
 import "../styles/module.css"
 function ModulePage(){
@@ -19,7 +20,7 @@ function ModulePage(){
 
         <div style={{backgroundColor:"white" ,marginLeft:"20px",marginRight:"20px"}}>
             <Layer>
-                <ListModudle/>
+             <ListModudle/>
             </Layer>
         </div>
            

@@ -63,6 +63,18 @@ function ListModudle(){
         }
         fetchModule();
     },[])
+
+  async function updateStatus(id,reviewStatus){
+      try {
+        const response = await axios.patch(`${API_URL}/api/update/${id}`,{reviewStatus});
+        alert('status updated')
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+        alert('failed to update status');
+        
+      }
+    }
     return(
        
     <>
@@ -227,11 +239,7 @@ function ListModudle(){
     </div>
     </div>
     </div>
-    {showPanel && (
-  <ViewModule
-    module={selectedModule}
-    onClose={() => setShowPanel(false)}
-  />
+    {showPanel && ( <ViewModule module={selectedModule} onClose={() => setShowPanel(false)}/>
     )}
     </>
     )

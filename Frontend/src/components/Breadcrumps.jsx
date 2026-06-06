@@ -1,16 +1,21 @@
 import { Breadcrumb, BreadcrumbItem } from "@carbon/react";
+import axios from "axios";
 import { useLocation, Link } from "react-router-dom";
+import API_URL from "../../config/config";
+import { useEffect } from "react";
 
 
 function Breadcrumps(){
     const location = useLocation();
-
-  const pathnames = location.pathname
+    const pathnames = location.pathname
     .split("/")
     .filter((x) => x);
+    
+  
+
     return(
        
-        <Breadcrumb>
+      <Breadcrumb>
       <BreadcrumbItem>
         <Link to="/">Home</Link>
       </BreadcrumbItem>
