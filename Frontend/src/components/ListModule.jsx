@@ -14,7 +14,8 @@ import {
   Dropdown,
   Button,
   OverflowMenu,
-  OverflowMenuItem
+  OverflowMenuItem,
+  Tag
 } from "@carbon/react";
 
 import {
@@ -24,11 +25,13 @@ import {
   ChevronDown,
   CheckmarkFilled,
    OverflowMenuHorizontal,
-   OverflowMenuVertical
+   OverflowMenuVertical,
+   AiGenerate
 } from "@carbon/icons-react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import API_URL from "../../config/config";
+import DataContext from "../../dataContext";
 
 
 
@@ -43,6 +46,8 @@ function ListModudle(){
     const[selectedModule,setSelectedModule] = useState(null)
     const [showPanel, setShowPanel] = useState(false);
     const [filters, setFilters] = useState({authors: [],categories: [],tags: []});
+    const{setRevCount,setModCount} = useContext(DataContext);
+    
     const toggleRow = (moduleId) => {
     setExpandedRows((prev) => ({
     ...prev,
@@ -54,7 +59,15 @@ function ListModudle(){
         const fetchModule = async ()=>{
             try {
                 const response = await axios.get(`${API_URL}/api/module`)
-                setData(response.data.allModule);
+                const modules = response.data.allModule
+                setData(modules);
+                 setModCount({
+                          live: modules.filter(m => m.status === "Active").length,
+                          draft: modules.filter(m => m.status !== "Active").length,
+                          });
+             
+                
+
                 console.log(response.data.allModule);
             } catch (error) {
                 console.error(error);
@@ -75,11 +88,12 @@ function ListModudle(){
         
       }
     }
+       
     return(
        
     <>
   
-    <div style={{marginTop:"50px"}}>
+    <div>
         <div className="flex justify-between  h-10 gap-3 p-2 items-center">
         <div className="flex gap-5 items-center ">
         <div >
@@ -196,7 +210,11 @@ function ListModudle(){
           <TableCell colSpan={6}>
             <div style={{width:""}} className=" flex justify-between   gap-30 items-center bg-gradient-to-t from-blue-50 to-white-100 "  >
               <div className="w-100 whitespace-wrap">
-                <strong>Generated Summary:</strong>
+                <div style={{display:"flex",padding:"5px",gap:"10px"}}>
+                    <strong>Generated Summary:</strong>
+                    <AiGenerate size={15}/>
+                </div>
+              
                 <p>{module.moduleSummary}</p>
               </div>
             <div className="flex flex-col gap-3 w-80" >
@@ -209,15 +227,13 @@ function ListModudle(){
               </div>
               </div>
 
-              <div className="flex w-100" >
+              <div className="flex w-100 gap-2" >
                 <strong>Tags:</strong>
                 <div className="flex gap-3">
                 {module.tags?.map((tag) => (
-                  <span
-                    key={tag}
-                    className=" bg-blue-100 rounded-full ">
+                 <Tag style={{backgroundColor:"#DBEAFE"}} key={tag}>
                     {tag}
-                  </span>
+                 </Tag>
                 ))}
                 </div>
               </div>

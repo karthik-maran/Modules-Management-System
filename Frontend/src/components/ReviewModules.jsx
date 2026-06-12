@@ -25,16 +25,19 @@ import {
   OverflowMenuHorizontal,
   WarningFilled
 } from "@carbon/icons-react";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
+import DataContext from "../../dataContext";
 
-function ReviewModuleList({reviewStatus,setCounts}){
+function ReviewModuleList({reviewStatus}){
   const[fetchData,setFetchData] = useState([]);
   const[showFilter, setShowFilter] = useState(false);
   const[showPanel,setShowPanel] = useState(false);
   const[expandedRows,setExpandedRows]= useState(false);
+  const{setRevCount} = useContext(DataContext)
     useEffect(()=>{
-      fetchStatus(reviewStatus);
+      fetchStatus(reviewStatus),
+      getMod()
     },[reviewStatus])
 
     async function fetchStatus(statusValue) {
@@ -47,11 +50,25 @@ function ReviewModuleList({reviewStatus,setCounts}){
       }
       
     }
+    async function getMod() {
+      try {
+        const response = await axios.get(`${API_URL}/api/module`)
+        const mod = response.data.allModule;
+           setRevCount({
+                          pending: mod.filter(m => m.reviewStatus === "Pending").length,
+                          needsChanges: mod.filter(m => m.reviewStatus === "Needs Changes").length,
+                          approved: mod.filter(m => m.reviewStatus === "Approved").length
+                          });
+      } catch (error) {
+        console.error(error)
+        
+      }
+    }
  
     return(
         <>
        
-    <div style={{marginTop:"50px"}}>
+    <div>
         <div className="flex justify-between  h-10 gap-3 p-2 items-center">
         <div className="flex gap-5 items-center ">
         <div >

@@ -23,7 +23,7 @@
   min-height: 48px;
   padding: 0.5rem;
   border-bottom: 1px solid #8d8d8d;
-  background: rgb(234, 232, 232);
+  background: white;
 }
 .right-modal .cds--modal-container {
   display: flex;
@@ -46,3 +46,37 @@
   margin-bottom: 0.5rem;
 }
 
+.ai-summary-container {
+  position: relative;
+  width: 100%;
+}
+
+.ai-button {
+  position: absolute;
+  right: 12px;
+  top: 33px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 8px;
+
+
+
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.ai-helper {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+
+}
+.ai-textarea textarea {
+  background: linear-gradient(
+    to top,
+    #dbe8ff 0%,
+    #edf4ff 20%,
+    #ffffff 60%
+  ) }

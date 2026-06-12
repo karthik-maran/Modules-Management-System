@@ -1,4 +1,4 @@
-import { Button } from "@carbon/react";
+import { Button,ContentSwitcher,Switch} from "@carbon/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -17,18 +17,11 @@ function ModuleComponent(){
         <div className="flex justify-between items-center  ">
             <div className="flex flex-col gap-5">
                 <h1>Modules</h1>
-            <div>
-              <Button 
-                className="mod-btn"
-                title="module"
-                >
-                Module
-                </Button>
-                <Button 
-                title="Needs Changes"
-                className="mymod-btn">
-                My Module
-                </Button>
+            <div style={{width:"300px"}}>
+                <ContentSwitcher>
+                  <Switch name="one" text="Module"></Switch>
+                  <Switch name="two" text="My Module"></Switch>
+                </ContentSwitcher>
             </div>
           
             </div>

@@ -3,24 +3,26 @@ import ReviewQueueComponent from "../components/ReviewQueue";
 import ReviewModuleList from "../components/ReviewModules";
 import { Layer } from "@carbon/react";
 import ListModudle from "../components/ListModule";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import DataContext from "../../dataContext";
 
 function ReviewQueuePage(){
     const [reviewStatus,setReviewStatus] = useState("Pending");
-    const [counts, setCounts] = useState({
-    pending: 0,
-    approved: 0,
-    needsChanges: 0
-    });
+    const {revCount} = useContext(DataContext)
+  
     return(
         <>
 
         <div style={{padding:"20px",backgroundColor:"white"}}>
-            <ReviewQueueComponent setReviewStatus={setReviewStatus} counts={counts}/>
+            <ReviewQueueComponent setReviewStatus={setReviewStatus} />
         </div>
-        <div style={{backgroundColor:"white"}}>
+        <div style={{marginLeft:"20px", display:"flex",padding:"10px"}}>
+           <p>Pending: {revCount.pending} | Needs Changes: {revCount.needsChanges}| Approved: {revCount.approved} </p>
+         
+        </div>
+        <div style={{backgroundColor:"white",marginLeft:"20px",marginRight:"20px"}}>
             <Layer>
-            <ReviewModuleList reviewStatus={reviewStatus} setCounts={setCounts}/>
+            <ReviewModuleList reviewStatus={reviewStatus} />
             </Layer>
         </div>
        

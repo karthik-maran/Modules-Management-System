@@ -6,6 +6,7 @@ import {
   Button,
   Tag
 } from "@carbon/react";
+import  { AiGenerate} from "@carbon/icons-react"
 import axios from "axios";
 import {dropdownData} from "../data/sampleData"
 import '@carbon/styles/css/styles.css';
@@ -126,19 +127,34 @@ function CreateModule({ open, onClose }){
       selectedItem={service}
       onChange={({selectedItem})=>{setService(selectedItem)}}
       />
-    <div>
-      <TextArea
-        id="purpose"
-        labelText="Module Summary"
-        placeholder="Add a short overview of the module purpose"
-        onChange={(e)=>setSummary(e.target.value)}
+    <div className="ai-summary-container">
+ <div className="ai-textarea">
+
+  <TextArea
     
-      />
-       <label
-            htmlFor="tags"
-            className="cds--label">
-             Add a rough idea. Zendy Ai can refine it.</label>
-      </div>
+    id="purpose"
+    labelText="Quick Summary"
+    placeholder="Add a short overview of the module purpose"
+    
+    onChange={(e) => setSummary(e.target.value)}
+    maxCount={100}
+    enableCounter
+  />
+ </div>
+
+  <button
+    type="button"
+    className="ai-button"
+  
+  >
+    <AiGenerate size={16} />
+    
+    </button>
+
+    <div className="ai-helper">
+        Add a rough idea. Zendy AI can refine it.
+    </div>
+     </div>
       <div>
       <label
             htmlFor="tags"
@@ -150,6 +166,7 @@ function CreateModule({ open, onClose }){
       key={tag}
       filter
       onClose={() => removeTag(tag)}
+      style={{backgroundColor:"#DBEAFE"}}
     >
       {tag}
     </Tag>
