@@ -27,7 +27,7 @@ import {
 } from "@carbon/icons-react";
 import { useContext, useEffect } from "react";
 import { useState } from "react";
-import DataContext from "../../dataContext";
+import DataContext from "../context/DataContext";
 
 function ReviewModuleList({reviewStatus}){
   const[fetchData,setFetchData] = useState([]);

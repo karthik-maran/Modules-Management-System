@@ -5,7 +5,7 @@ import { Route,Routes } from 'react-router-dom';
 import ModulePage from './Pages/ModulePage';
 import ReviewQueuePage from './Pages/ReviewQueuePage';
 import ModuleEditorPage from './Pages/EditModulePage';
-import DataContext from '../dataContext';
+import DataContext from './context/DataContext';
 import { useState } from 'react';
 
 function App() {

@@ -31,7 +31,7 @@ import {
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import API_URL from "../../config/config";
-import DataContext from "../../dataContext";
+import DataContext from "../context/DataContext";
 
 
 

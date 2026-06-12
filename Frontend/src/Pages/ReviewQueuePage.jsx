@@ -4,7 +4,7 @@ import ReviewModuleList from "../components/ReviewModules";
 import { Layer } from "@carbon/react";
 import ListModudle from "../components/ListModule";
 import { useContext, useState } from "react";
-import DataContext from "../../dataContext";
+import DataContext from "../context/DataContext";
 
 function ReviewQueuePage(){
     const [reviewStatus,setReviewStatus] = useState("Pending");

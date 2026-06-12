@@ -3,7 +3,7 @@ import { WarningFilled,CheckmarkFilled } from "@carbon/icons-react";
 import "@carbon/styles/css/styles.css"
 import "../styles/reviewComponent.css"
 import { useContext } from "react";
-import DataContext from "../../dataContext";
+import DataContext from "../context/DataContext";
 
 
 function ReviewQueueComponent({setReviewStatus}){

@@ -5,7 +5,7 @@ import ListModudle from "../components/ListModule";
 import '@carbon/styles/css/styles.css';
 import "../styles/module.css"
 import { useContext } from "react";
-import DataContext from "../../dataContext";
+import DataContext from "../context/DataContext";
 function ModulePage(){
     const{modCount} = useContext(DataContext);
     return(
