@@ -130,7 +130,7 @@ function CreateModule({ open, onClose }){
     <div className="ai-summary-container">
  <div className="ai-textarea">
 
-  <TextArea
+    <TextArea
     
     id="purpose"
     labelText="Quick Summary"
@@ -144,9 +144,7 @@ function CreateModule({ open, onClose }){
 
   <button
     type="button"
-    className="ai-button"
-  
-  >
+    className="ai-button">
     <AiGenerate size={16} />
     
     </button>

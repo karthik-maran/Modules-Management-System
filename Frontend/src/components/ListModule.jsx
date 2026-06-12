@@ -56,26 +56,24 @@ function ListModudle(){
     };
 
     useEffect(()=>{
-        const fetchModule = async ()=>{
-            try {
+      fetchModule()
+      },[])
+  async function fetchModule() {
+          try {
                 const response = await axios.get(`${API_URL}/api/module`)
                 const modules = response.data.allModule
                 setData(modules);
                  setModCount({
                           live: modules.filter(m => m.status === "Active").length,
                           draft: modules.filter(m => m.status !== "Active").length,
-                          });
-             
-                
-
+                          })
                 console.log(response.data.allModule);
             } catch (error) {
                 console.error(error);
                 
             }
-        }
-        fetchModule();
-    },[])
+    
+  }
 
   async function updateStatus(id,reviewStatus){
       try {
@@ -122,6 +120,7 @@ function ListModudle(){
         kind="ghost"
         renderIcon={Renew}
         iconDescription="Refresh"
+        onClick={()=>fetchModule()}
       />
        </div>
         </div>
